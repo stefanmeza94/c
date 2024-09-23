@@ -2,16 +2,18 @@
 
 void main() {
   int a = 42;
-  int b = 3 ;
+  int b = 3;
   int c = -7;
+  float d = -6.99999999  ;
+  unsigned char e;
 
-  unsigned char d, e;
+  e = a <= b || c != d && c < b;
 
-  d = a < b;
-  e = b > c;
+  printf("Rezultat dela a <= b je %u. \n", a <= b);
+  printf("Rezultat dela c != d je %u. \n", c != d);
+  printf("Rezultat dela c < b je %u. \n", c < b);
 
-  printf("Rezultat d je %d.\n", d);
-  printf("Rezultat e je %d.\n", e);
+  printf("Konacni rezultat je %u.\n", e);
 }
 
-// logicke operacije
+// 020 - Uslovno granjanje
