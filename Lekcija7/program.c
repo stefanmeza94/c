@@ -6,7 +6,7 @@ void main() {        //        0        1        2
     double *p;
 
     /* 
-        adresa na koju ce sada da upucuje u memoriji nas pokazivac (ne *p, dakle na vrednost na koju upucuje ne menjamo vrednost na memorijskoj lokaciji, vec menjamo samu memorijsku 
+        adresa na koju ce sada da upucuje u memoriji nas pokazivac (ne *p, dakle ne vrednost na koju upucuje, ne menjamo vrednost na memorijskoj lokaciji, vec menjamo samu memorijsku 
         lokaciju) menjamo adresu ka kojoj upucuje pokazivac
     */
 
