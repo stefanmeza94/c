@@ -30,3 +30,5 @@ void main() {
   int izbor = getChoiceFromMenu();
   printf("Korisnik je izabrao %d\n", izbor);
 }
+
+// 028
