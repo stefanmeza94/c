@@ -36,4 +36,3 @@ void main() {
   prikaziTemperaturu(konvertujTemperaturuCuF(ucitajTemperaturuOdKorisnika()));
 }
 
-// prosledjivanje vrednosti po vrednosti i po referenci - 9:00
