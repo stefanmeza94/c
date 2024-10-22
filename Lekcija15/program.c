@@ -4,9 +4,9 @@ void main() {
   double brojevi[5];
   double suma = 0;
   double srednjaVrednost;
-  int brojElemenata = sizeof(brojevi)/sizeof(double);
+  int brojElemenata = sizeof(brojevi) / sizeof(double);
 
-  for (int indeks = 0;indeks < brojElemenata; indeks += 1) {
+  for (int indeks = 0; indeks < brojElemenata; indeks += 1) {
     printf("Unesite %d. broj: ", indeks + 1);
     scanf("%lf", &brojevi[indeks]);
   }
@@ -19,4 +19,3 @@ void main() {
   printf("Srednja vrednost je %f.\n", srednjaVrednost);
 }
 
-// nizovi 18:00
