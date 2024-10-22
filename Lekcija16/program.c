@@ -27,3 +27,5 @@ void main() {
     }
 
 }
+
+//  034 - Funkcije za rad sa tekstualnim podacima
