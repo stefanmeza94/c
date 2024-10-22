@@ -20,5 +20,3 @@ void main() {
   popuniNiz(niz, 10);
   prikaziNiz(niz, 10);
 }
-
-// stringovi 033
