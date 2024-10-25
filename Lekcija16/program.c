@@ -25,7 +25,4 @@ void main() {
     } else {
         printf("Puno ime i prezime: %s %s.", ime, prezime); 
     }
-
 }
-
-//  034 - Funkcije za rad sa tekstualnim podacima
