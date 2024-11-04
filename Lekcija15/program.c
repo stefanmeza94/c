@@ -1,21 +1,28 @@
 #include <stdio.h>
+#include <string.h>
 
-void main() {
-  double brojevi[5];
-  double suma = 0;
-  double srednjaVrednost;
-  int brojElemenata = sizeof(brojevi) / sizeof(double);
-
-  for (int indeks = 0; indeks < brojElemenata; indeks += 1) {
-    printf("Unesite %d. broj: ", indeks + 1);
-    scanf("%lf", &brojevi[indeks]);
-  }
-
-  for (int i = 0; i < brojElemenata; i++) {
-    suma += brojevi[i];
-  }
-
-  srednjaVrednost = suma / brojElemenata;
-  printf("Srednja vrednost je %f.\n", srednjaVrednost);
+void ukloniNoviRed(char *niz) {
+    niz[strlen(niz) - 1] = '\0';
 }
 
+void main() {
+    char ime[50];
+    char prezime[50];
+
+    printf("Unesite svoje ime: ");
+    // fgets funkcija ce da uhvati ceo tekstualni podatak koji smo ukucali, ali ce da zapamti i novi red prilikom pritiska na enter da bi korisnik potvrdio rec koju je odkucao.
+    fgets(ime, sizeof(ime), stdin);
+    // uklanjanje novog reda
+    ukloniNoviRed(ime);
+
+    printf("Unesite svoje prezime: ");
+    fgets(prezime, sizeof(prezime), stdin);
+    // uklanjanje novog reda
+    ukloniNoviRed(prezime);
+
+    if (strlen(ime) == 0 || strlen(prezime) == 0) {
+        printf("Ime ili prezime nisu ispravno uneti.\n");
+    } else {
+        printf("Puno ime i prezime: %s %s.", ime, prezime); 
+    }
+}

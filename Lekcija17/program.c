@@ -1,40 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
+typedef struct {
+  char ime[100];
+  double x, y;
+  unsigned short energija;
+} Igrac;
+
 void main() {
-    char imeGrada[100];
-    char dopunjenoImeGrada[150];
-    char tajnoMesto[50];
-    char unos[50];
-    char *str;
+  Igrac igrac1;
 
-    printf("Unesite ime mesta/grada u kojem ste rodjeni: ");
-    gets(imeGrada);
+  strcpy(igrac1.ime, "Link");
+  igrac1.x = 178.34;
+  igrac1.y = 34.123;
+  igrac1.energija = 250;
 
-    strcpy(dopunjenoImeGrada, imeGrada);
-    strcat(dopunjenoImeGrada, "ic");
-
-    printf("Ime mesta/grada u kojem ste rodjeni je %s?\n", dopunjenoImeGrada);
-
-    strcpy(tajnoMesto, "NEGOTIN");
-    
-    while(1) {
-        printf("Tajno mesto ime %u slova. Kako se ono zove?", strlen(tajnoMesto));
-        gets(unos);
-        str = strupr(unos);
-
-        if (strcmp(tajnoMesto, unos) == 0) {
-            printf("Pogodak!\n");
-            break;
-        } 
-    }   
-
-    str = strlwr(imeGrada);
-    if (strstr(imeGrada, "grad") != 0) {
-        printf("U nazivu mesta/grada u kojem ste rodjeni postoji deo \"grad\".\n");
-    } else {
-        printf("U nazivu mesta/grada u kojem ste rodjeni ne postoji deo \"grad\".\n");
-    }
+  printf("%s je na kodrinatama %.2f %.2f i nivo energije je %u.\n", igrac1.ime, igrac1.x, igrac1.y, igrac1.energija);
 }
-
-// 35

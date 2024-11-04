@@ -1,20 +1,22 @@
 #include <stdio.h>
 
-// primer lokalnog opsega
+void popuniNiz(double *niz, int brojElemenata) {
+  for (int i = 0; i < brojElemenata; i++) {
+    printf("Unesite %d. broj: ", i + 1);
+    scanf("%lf", &niz[i]);
+  }
+}
 
-void test(int podatak) {
-  // ovaj argument podatak je zapravo kopija originale promenljive podatak koju smo prosledili unutar main funkcije, sto znaci da je ovaj podatak ovde lokalan za ovu funkciju test, tacnije pravi se kopija originalnog podataka, promenom dole u 42 mi menjamo upravo tu kopiju, a ne orginalnu promenljivu podatak, ovo je prosledjivanje po vrednosti.
-  printf("test: 'Podatak je %d\n", podatak);
-  podatak = 42;
-  printf("test: Podatak je %d\n", podatak);
+void prikaziNiz(double *niz, int brojElemenata) {
+  for(int i = 0; i < brojElemenata; i++) {
+    printf("%3d. Element = %.4f.\n", i + 1, niz[i]);
+  }
 }
 
 void main() {
-  int podatak = 10;
+  double niz[10];
 
-  printf("main: Podataka je %d\n", podatak);
-  test(podatak); 
-
-  // kad main funkcija nastavi da se izvrsava posle izvrsavanja test funkcije ona ce ispisitai originalnu vrednost podatka = 10, jer je to lokalna promenljiva za ovu main funkciju.
-  printf("main: Podataka je %d\n", podatak);
+  // prosledjivanje po referenci, kad prosledimo ovako niz sam po sebi on vec pokazuje ka svom PRVOM elementu, pa u odnosu na njega pristupo dalje svim elementima u popuniNiz funkciji, zato je uvek dobra praksa da prosledimo i koliko elemenata ima niz da bi znali kolko mozemo da se krecemo na dalje u nizu.
+  popuniNiz(niz, 10);
+  prikaziNiz(niz, 10);
 }

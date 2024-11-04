@@ -1,28 +1,40 @@
 #include <stdio.h>
 #include <string.h>
 
-void ukloniNoviRed(char *niz) {
-    niz[strlen(niz) - 1] = '\0';
-}
-
 void main() {
-    char ime[50];
-    char prezime[50];
+    char imeGrada[100];
+    char dopunjenoImeGrada[150];
+    char tajnoMesto[50];
+    char unos[50];
+    char *str;
 
-    printf("Unesite svoje ime: ");
-    // fgets funkcija ce da uhvati ceo tekstualni podatak koji smo ukucali, ali ce da zapamti i novi red prilikom pritiska na enter da bi korisnik potvrdio rec koju je odkucao.
-    fgets(ime, sizeof(ime), stdin);
-    // uklanjanje novog reda
-    ukloniNoviRed(ime);
+    printf("Unesite ime mesta/grada u kojem ste rodjeni: ");
+    gets(imeGrada);
 
-    printf("Unesite svoje prezime: ");
-    fgets(prezime, sizeof(prezime), stdin);
-    // uklanjanje novog reda
-    ukloniNoviRed(prezime);
+    strcpy(dopunjenoImeGrada, imeGrada);
+    strcat(dopunjenoImeGrada, "ic");
 
-    if (strlen(ime) == 0 || strlen(prezime) == 0) {
-        printf("Ime ili prezime nisu ispravno uneti.\n");
+    printf("Ime mesta/grada u kojem ste rodjeni je %s?\n", dopunjenoImeGrada);
+
+    strcpy(tajnoMesto, "NEGOTIN");
+    
+    while(1) {
+        printf("Tajno mesto ime %u slova. Kako se ono zove?", strlen(tajnoMesto));
+        gets(unos);
+        str = strupr(unos);
+
+        if (strcmp(tajnoMesto, unos) == 0) {
+            printf("Pogodak!\n");
+            break;
+        } 
+    }   
+
+    str = strlwr(imeGrada);
+    if (strstr(imeGrada, "grad") != 0) {
+        printf("U nazivu mesta/grada u kojem ste rodjeni postoji deo \"grad\".\n");
     } else {
-        printf("Puno ime i prezime: %s %s.", ime, prezime); 
+        printf("U nazivu mesta/grada u kojem ste rodjeni ne postoji deo \"grad\".\n");
     }
 }
+
+// 35
