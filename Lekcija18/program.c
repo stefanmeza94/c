@@ -38,5 +38,4 @@ void main() {
   printf("%10.2f\n", s1.kolicina);
 }
 
-//  038 - Programski jezik C - Formatiranje stringova
         
